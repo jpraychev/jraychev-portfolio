@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">About</span>
+        <h2 class="heading">Who Am I</h2>
+    </div>
+</div>
+<div class = "container-fluid">
+    <div class="row">
+        <div class = "container-text">
+            <p> 
+                I'm a software engineer and enthusiast working on multiple areas like computer networking, software engineering, python programming, web development and much more. It all started back in 2006 at high school. I was fascinated with computers and I really wanted to know how do they work. I am curious by nature and always wonder how something work and that probably drew my into IT fields. In 2010 I went to university to study Telecommunications and start a career as a network administrator. Few years later in 2015 I graduated with honors and went straight into the wild to work as a IT field engineer. An year later I applied for a PhD and in 2019 I defend my thesis successfully. Since then I kinda switched fields and started working more as a software developer, freelancer and writer. I mainly write about software on my blog and all articles are published to Medium. If you are interested in working with me, feel free to send me email at jpraychev@gmail.com or use the contact page. 
+            </p>
+        </div>
+    </div>
+</div>
+<hr>
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">Skill</span>
+        <h2 class="heading">What I Do</h2>
+    </div>
+</div>
+<div class = "container-fluid">
+
+    <div class="row progress-row">
+    
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> Python <i class=" fab fa-python "></i> </span>
+                    <span class="skill-percent"> 80%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(236, 84, 83);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> Javascript &amp; jQuery <i class=" fab fa-js-square "></i> </span>
+                    <span class="skill-percent"> 67%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(44, 152, 240);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> HTML &amp; CSS <i class=" fab fa-css3-alt "></i> </span>
+                    <span class="skill-percent"> 77%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(64, 84, 178);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> Linux <i class=" fab fa-linux "></i> </span>
+                    <span class="skill-percent"> 90%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(249, 191, 63);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> Computer networking <i class=" fas fa-network-wired "></i> </span>
+                    <span class="skill-percent"> 95%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(168, 76, 184);">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-xl-6 floatLeft">
+            <div class="progress-box">
+                <div class="flex-box">
+                    <span class="skill-name"> SQL Databases <i class=" fas fa-database "></i> </span>
+                    <span class="skill-percent"> 66%</span>
+                    
+                </div>
+                <div class="progress-full"> 
+                    <div class="progress-active" style="background-color: rgb(47, 164, 153);">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+<!-- <hr>
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">Testimonials</span>
+        <h2 class="heading">What people think</h2>
+    </div>
+</div> -->
+<!-- <div class = "container-fluid">
+    <div class="row quote-row">
+        <div class = col-xl-9>
+            <div class = "row">
+                {% for quote in quotes %}
+                    <div class = "col-xl-4">
+                        <div class = "quote-box" style = "border-bottom: 3px solid; border-color: {{ quote.quote_color }};">
+                            <span> " </span>
+                            <div class = "quote-desc">
+                                <p>{{ quote.quote_text }}</p>
+                            </div>
+                            <div class = "row quote">
+                                <div class = "quote-from">
+                                    <img src = "{{ quote.quote_author_image.url }}">
+                                </div>
+                                <div class = "quote-meta">
+                                    <p> {{ quote.quote_author }}<br>
+                                        {{ quote.quote_author_company }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div> -->
+{% endblock %}
