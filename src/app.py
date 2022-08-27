@@ -24,6 +24,13 @@ def services():
             service_data = json.load(f)
         return render_template('services.html', context=service_data)
 
+@app.route('/experiences/')
+def experiences():
+    if request.method == 'GET':
+        with open('db/experiences.json') as f:
+            experience_data = json.load(f)
+        return render_template('experiences.html', context=experience_data)
+
 
 if __name__ == "__main__":
     app.run(

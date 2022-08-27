@@ -1,0 +1,34 @@
+{
+    "experiences" : {
+        "1" : {
+            "employer_name" : "SAP",
+            "employment_duration" : "2021 - now",
+            "job_title" : "DevOps Engineer",
+            "job_description" : " DevOps principle, Agile, Root Cause Analysis, CloudOps"
+        },
+        "2" : {
+            "employer_name" : "Freelance software developer",
+            "employment_duration" : "2019 - now",
+            "job_title" : "Full Stack Developer",
+            "job_description" : "As a freelancer my time is mainly occupied with client side projects. Some of those projects include web development using frameworks such as Django, Woordpress and Shopify. Lately, I spend quite a lot of time building various automation scripts using mainly Python3 and Bash. "
+        },
+        "3" : {
+            "employer_name" : "Dianel Ltd.",
+            "employment_duration" : "2020 - 2021",
+            "job_title" : "Network and System admin",
+            "job_description" : "As a network and system administrator I am responsible for maintaining the system infrastructure. My main tasks include but are not limited to installing, configuring and maintaining various services that support company needs (iSCSI, SMB, Ansible, DNS, Logging, Monitoring, Networking, etc). Besides the system administration, I am responsible for the network infrastructure as well. I am responsible for configuring and maintaining all network equipment that includes Cisco, Nexus and MikroTik devices. In addition to that I am building internal tools that supports my day to day tasks using Python, Javascript, Bash, etc."
+        },
+        "4" : {
+            "employer_name" : "University of Ruse 'Angel Kanchev'",
+            "employment_duration" : "2016 - 2020",
+            "job_title" : "PhD Student and Project Research",
+            "job_description" : "As a researcher I have been working on several European projects including 3D technologies such as modelling, printing, visualization, etc.. In addition to that I have been working on a prototype vehicle powered by a hydrogen fuel cell and competing in the Shell Eco Marathon events. My PhD revolves around SDN networks."
+        },
+        "5" : {
+            "employer_name" : "Datasyst Ltd.",
+            "employment_duration" : "2015 - 2016",
+            "job_title" : "IT Field Engineer",
+            "job_description" : "As a IT field engineer I was mainly responsible for physical expanding ISP's layer 2 network infrastructure. Other responsibilities of mine were troubleshooting and resolving network related issues, configuring, deploying and troubleshooting network equipment, assembling, installing, configuring, troubleshooting and resolving computer related issues, web programming using content management systems."
+        }       
+    }
+}
