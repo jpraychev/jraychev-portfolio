@@ -10,7 +10,7 @@ app = Flask(__name__)
 def not_found(e):
     return render_template("404.html")
 
-@app.route('/about/')
+@app.route('/')
 def about():
     if request.method == 'GET':
         with open('db/about.json') as f:
@@ -30,6 +30,11 @@ def experiences():
         with open('db/experiences.json') as f:
             experience_data = json.load(f)
         return render_template('experiences.html', context=experience_data)
+
+@app.route('/blog/')
+def blog():
+    if request.method == 'GET':
+        return render_template('blog.html')
 
 
 if __name__ == "__main__":
