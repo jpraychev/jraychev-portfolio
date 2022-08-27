@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %} Projects {% endblock %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">Projects</span>
+        <h2 class="heading">What I've been working on</h2>
+    </div>
+</div>
+<div class = "container-fluid">
+    <div class="row service-row">
+        <div class = "col-xl-9">
+            <p class="text-center">
+                Welcome to my online portfolio. Here you will find all recent projects that I have been working on.
+                If you are interested in working with me I am open for freelance work at the moment, just click
+                the button below and contact me.
+            </p>
+            <div class = row>
+                {% for project in context.projects.values() %}
+                <div class = "col-xl-4">
+                    <div>
+                        <div class = "project-headline">
+                            <p><a href="{{ project.url }}">{{ project.title }}</a></p>
+                        </div>
+                        <div class = "project-desc">
+                            <p> {{ project.description }} </p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

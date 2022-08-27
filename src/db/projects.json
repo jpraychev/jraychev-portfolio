@@ -1,0 +1,24 @@
+{
+    "projects" : {
+        "1" : {
+            "title" : "self",
+            "url" : "https://jraychev.com",
+            "description" : "jraychev.com is a portfolio project which I've been developing for myself. I've been developing it using primarily Django Framework for the back-end and CSS, Javascript and jQuery for the front-end."
+        },
+        "2" : {
+            "title" : "xrug",
+            "url" : "https://xrug.uk/",
+            "description" : "Xrugs is a UK based company primarily focused on selling beautiful rugs to end customers. This project was build Shopify platform and further on customized according to client needs. For more information please visit their website."
+        },
+        "3" : {
+            "title" : "vivarugs",
+            "url" : "https://www.vivarugs.uk/",
+            "description" : "Vivarugs project was build on Shopify platform and is very similar to Xrugs.uk, but it's focus is mainly Business to Business clients. For more information please visit their website."
+        },
+        "4" : {
+            "title" : "rugs dropshipping",
+            "url" : "https://www.rugsdropshipping.uk/",
+            "description" : "Rugsdropshipping project is another online store that is mainly focused on Business to Business selling. The project was using the Wordpress platform, WooCommerce plugins and whole bunch of other customization according to client needs. Please visit their website for more information."
+        }
+    }
+}

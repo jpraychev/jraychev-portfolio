@@ -136,7 +136,7 @@ ul.social-sidebar li {
 }
 
 #sidebar ul li a:hover:after,
-.main-navbar li a:hover:after  {
+.main-navbar li a:hover:after {
     transform: scaleX(1);
     transform-origin: bottom center;
     cursor: pointer;
@@ -147,6 +147,7 @@ ul.social-sidebar li {
     transform: scaleX(1);
     transform-origin: bottom center;
 }
+
 /* 
     Image is resized by the backend when uploaded.
     In case that the image is bigger resize it to
@@ -498,13 +499,15 @@ ul.social-sidebar li {
     border-color: inherit;
 }
 
-.service-headline {
+.service-headline,
+.project-headline {
     text-align: center;
     font-size: 1.25em;
     padding-top: 10px;
 }
 
-.service-headline p {
+.service-headline p,
+.project-headline p {
     color: var(--black-075);
     font-weight: 600;
     margin-top: 20px;
