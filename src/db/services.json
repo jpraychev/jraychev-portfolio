@@ -1,0 +1,29 @@
+{
+    "service_description": "I have 5+ years of in IT industry field as a network and system engineer. In recent years I am more focused on the software side of things. You can take a look at my project portfolio and online resume to find out more about my skills and experiences. I'm currently taking on freelance software development work. You're welcome to contact me for a custom quote for your project.",
+    "services" : {
+        "1" : {
+            "name" : "Python Dev",
+            "description" : "Need a task to be automated? Want to scrape the web or work on a custom piece of code? No worries. I got you covered. As a software engineer working primarily with Python and I could offer a fresh pair of eyes.",
+            "color" : "#f9bf3f",
+            "icon" : "fa-brands fa-python"
+        },
+        "2" : {
+            "name" : "Python tutoring",
+            "description" : "Want to learn about the ins and outs of Python. I can offer custom notes, lectures and exercises and accelerate your journey into the software development world.",
+            "color" : "#2c98f0",
+            "icon" : "fa-brands fa-python"
+        },
+        "3" : {
+            "name" : "Web Dev",
+            "description" : "In this day and age, being present on the web is a necessity. As a software developer I can offer different solutions for your web project - from serving static content to building full fledged responsive and dynamic websites.",
+            "color" : "#2fa499",
+            "icon" : "fa-solid fa-code"
+        },
+        "4" : {
+            "name" : "IT Consulting",
+            "description" : "As a IT engineer with more than 5 years of experience in the field I can offer vast amount of knowledge in different field - computer networks, system administration, software development and much more.",
+            "color" : "#ec5453",
+            "icon" : "fa-solid fa-network-wired"
+        }
+    }
+}

@@ -1,7 +1,10 @@
 from flask import Flask, render_template
 from flask import request
+import json
 
 app = Flask(__name__)
+
+
 
 @app.errorhandler(404) 
 def not_found(e):
@@ -10,7 +13,16 @@ def not_found(e):
 @app.route('/about/')
 def about():
     if request.method == 'GET':
-        return render_template('about.html')
+        with open('db/about.json') as f:
+            about_data = json.load(f)
+        return render_template('about.html', context=about_data)
+
+@app.route('/services/')
+def services():
+    if request.method == 'GET':
+        with open('db/services.json') as f:
+            service_data = json.load(f)
+        return render_template('services.html', context=service_data)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Services
+{% endblock %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">Services</span>
+        <h2 class="heading">What I Do</h2>
+    </div>
+</div>
+<div class = "container-fluid">
+    <div class="row service-row">
+        <div class = "col-xl-9">
+            <p class="text-center">
+                {{ context.service_description }}
+            </p>
+            <div class = row>
+                {% for service in context.services.values() %}
+                <div class = "col-xl-4">
+                    <div class = "service-box" style = "border-bottom: 3px solid {{ service.color }};">
+                        <div class = "service-icon" style="background-color: {{ service.color }};">
+                            <i class=" {{ service.icon}} "></i>
+                        </div>
+                        <div class = "service-headline">
+                            <p> {{ service.name }}</p>
+                        </div>
+                        <div class = "service-desc">
+                            <p>{{ service.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

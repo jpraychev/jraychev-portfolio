@@ -1,0 +1,47 @@
+{
+    "about" : "I am a software engineer and enthusiast working on multiple areas like computer networking, software engineering, python programming, web development and much more. It all started back in 2006 at high school. I was fascinated with computers and I really wanted to know how do they work. I am curious by nature and always wonder how something work and that probably drew my into IT fields. In 2010 I went to university to study Telecommunications and start a career as a network administrator. Few years later in 2015 I graduated with honors and went straight into the wild to work as a IT field engineer. An year later I applied for a PhD and in 2019 I defend my thesis successfully. Since then I kinda switched fields and started working more as a software developer, freelancer and writer. I mainly write about software on my blog and all articles are published to Medium. If you are interested in working with me, feel free to send me email at jpraychev@gmail.com or use the contact page.",
+    "skills" : {
+        "1" : {
+            "name" : "Python",
+            "percentage" : "90%",
+            "color" : "#ec5453",
+            "icon" : "fa-brands fa-python"
+        },
+        "2" : {
+            "name" : "Javascript/jQuery",
+            "percentage" : "80%",
+            "color" : "#2C98F0",
+            "icon" : "fa-brands fa-js-square"
+        },
+        "3" : {
+            "name" : "AWS",
+            "percentage" : "85%",
+            "color" : "#ff9900",
+            "icon" : "fa-brands fa-aws"
+        },
+        "4" : {
+            "name" : "SQL",
+            "percentage" : "90%",
+            "color" : "#f9bf3f",
+            "icon" : "fa-solid fa-database"
+        },
+        "5" : {
+            "name" : "Computer networking",
+            "percentage" : "95%",
+            "color" : "#a84cb8",
+            "icon" : "fa-solid fa-network-wired"
+        },
+        "6" : {
+            "name" : "Linux operating systems",
+            "percentage" : "90%",
+            "color" : "#4054b2",
+            "icon" : "fa-brands fa-linux"
+        },
+        "7" : {
+            "name" : "Bash",
+            "percentage" : "75%",
+            "color" : "#008080",
+            "icon" : "fa-solid fa-code"
+        }
+    }
+}
