@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %} Contact me {% endblock %}
+
+{% block content %}
+
+<div class = "row">
+    <div class = "col-sm-12">
+        <span class="heading-meta">Contact</span>
+        <h2 class="heading">Get in touch</h2>
+    </div>
+</div>
+<div class = "container-fluid">
+    <div class = "row contact-row">
+        <div class = "col-xl-7 contact-form-animate">
+            <p class = "text-center">
+                Interested in hiring me for your project or just want to say hello? 
+                You can fill out the contact form below or send me an email to jpraychev@gmail.com
+            </p>
+                <form method="post" class = "control-form">
+
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <input type="text" name="name" placeholder="Name" required="" id="id_name">
+                        </div>
+                        <div class="col-xl-6">
+                            <input type="text" name="email" placeholder="Email" required="" id="id_email">
+                        </div>
+                        <div class="col-xl-12">
+                            <input type="text" name="subject" placeholder="Subject" required="" id="id_subject">
+                        </div>
+                        <div class="col-xl-12">
+                            <textarea name="message" cols="40" rows="10" placeholder="Message" required="" id="id_message"></textarea>
+                        </div>
+                        <div class="col-xl-12">
+                            <button type="submit" class="btn btn-block btn-primary">Send Now</button>
+                        </div>
+                    </div>
+                    
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

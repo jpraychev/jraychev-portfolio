@@ -43,6 +43,13 @@ def projects():
             projects_data = json.load(f)
         return render_template('projects.html', context=projects_data)
 
+@app.route('/contact/')
+def contact():
+    if request.method == 'GET':
+        # with open('db/projects.json') as f:
+        #     projects_data = json.load(f)
+        return render_template('contact.html')
+
 
 if __name__ == "__main__":
     app.run(
