@@ -20,7 +20,7 @@
                 Interested in hiring me for your project or just want to say hello? 
                 You can fill out the contact form below or send me an email to jpraychev@gmail.com
             </p>
-                <form method="post" class = "control-form">
+                <form id="contact-form" method="post" class="control-form">
                     <div class="row">
                         <div class="col-xl-6">
                             <input type="text" name="name" placeholder="Name" required="" id="id_name">
@@ -35,7 +35,10 @@
                             <textarea name="message" cols="40" rows="10" placeholder="Message" required="" id="id_message"></textarea>
                         </div>
                         <div class="col-xl-12">
-                            <button type="submit" class="btn btn-block btn-primary">Send Now</button>
+                            <input name="g-recaptcha-response" id="recaptcha" hidden></input>
+                        </div>
+                        <div class="col-xl-12">
+                            <button id="form-btn" type="submit" class="btn btn-block btn-primary">Send now</button>
                         </div>
                     </div>
                     

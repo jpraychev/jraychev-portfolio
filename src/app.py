@@ -1,10 +1,13 @@
 import json
 from datetime import datetime
-
+from dotenv import load_dotenv
+import requests
 from email_validator import validate_email
 from flask import Flask, render_template, request
 from utils import validate_string
+import os
 
+load_dotenv(dotenv_path='../venv/.env')
 app = Flask(__name__)
 
 @app.errorhandler(404) 
@@ -61,7 +64,23 @@ def contact():
         return render_template('contact.html', context=context)
 
     if request.method == 'POST':
+
+        # validaate Google captcha
+        
+        data = {
+            'secret': os.getenv('RECAPTCHA_SECRET_KEY'),
+            'response' : request.form['g-recaptcha-response']
+        }
+
+        r = requests.post(os.getenv('RECAPTCHA_VERIFY_URL'), data=data)
+
+        if not r.json()['success']:
+            context['feedback_message'] = "Suspicious of robot activities"
+            context['alert_type'] = 'danger'
+            return render_template('contact.html', context=context)
+        
         timestamp_now = int(datetime.now().timestamp())
+        
         try:
             form_data = {
                 'name' : validate_string(request.form['name']),

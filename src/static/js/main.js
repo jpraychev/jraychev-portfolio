@@ -88,3 +88,13 @@ $(window).on('resize', function() {
     checkWidth(width) ? addActive() : removeActive();
 });
 
+// Handles Google ReCaptcha logic
+$("#form-btn").on('click', function(e) {
+    e.preventDefault();
+    grecaptcha.ready(function() {
+        grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
+            $("#recaptcha").val(token)
+            $("#contact-form").submit()
+        });
+    });
+});
