@@ -97,3 +97,12 @@ $("#form-btn").on('click', function(e) {
         });
     });
 });
+
+// Handles active class and adds line below the item
+currentPath = $("#request-path").data("requestPath").split("/")[1]
+if (!currentPath) {
+    currentLink = $("#home")
+} else {
+    currentLink = $("#" + currentPath)
+}
+currentLink.addClass("active")

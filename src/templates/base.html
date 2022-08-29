@@ -29,7 +29,7 @@
             <div id="content">                
                 <nav class="navbar navbar-expand-lg">
                     <div class="container-fluid">
-                        <span id = "loggedin">Aloha dear stranger</span>
+                        <span id="loggedin"> Aloha dear stranger</span>
                         <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <i class="fa fa-bars" aria-hidden="true"></i>
                         </button>
@@ -39,7 +39,8 @@
                 {% block content %}
                 {% endblock %}
             </div>
-        </div>     
+        </div>
+        <div id="request-path" data-request-path="{{ request.path }}" hidden></div>
         <!-- <script src="" async defer></script> -->
         <script src="https://www.google.com/recaptcha/api.js?render=6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
