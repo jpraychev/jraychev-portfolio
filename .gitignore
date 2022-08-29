@@ -1,3 +1,2 @@
 venv/
-src/__pycache__/*
-src/db/contact.json
+src/__pycache__/
