@@ -11,7 +11,7 @@
     </div>
 </div>
 <div class = "container-fluid timeline-container accordion">
-    {% for experience in context.experiences.values() %}
+    {% for experience in context.experience.values() %}
     <div class="row">
         <div class=" timeline-circle timeline-badge-{{ loop.index }} fadeInUp-{{ loop.index }}">
             <i class="timeline-icon fas fa-briefcase"></i>

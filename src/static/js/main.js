@@ -17,7 +17,6 @@ $(document).ready(function () {
 
     // Toggles sidebar
     $('#sidebarCollapse').on('click', function () {
-        console.log(';asdasds')
         $('#sidebar').toggleClass('active');
         $('.arrow').toggleClass('left right');
     });
