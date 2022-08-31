@@ -16,13 +16,12 @@ def not_found(e):
     return render_template("404.html")
 
 @app.route('/')
-@app.route('/about/')
 @app.route('/home/')
-def about():
+def home():
     if request.method == 'GET':
-        with open(constants.ABOUT_PATH) as f:
-            about_data = json.load(f)
-        return render_template('about.html', context=about_data)
+        with open(constants.HOME_PATH) as f:
+            home_data = json.load(f)
+        return render_template('home.html', context=home_data)
 
 @app.route('/services/')
 def services():
