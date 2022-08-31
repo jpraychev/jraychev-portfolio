@@ -6,8 +6,9 @@ from email_validator import validate_email
 from flask import Flask, render_template, request
 from utils import validate_string
 import os
+import constants
 
-load_dotenv(dotenv_path='../venv/.env')
+
 app = Flask(__name__)
 
 @app.errorhandler(404) 
@@ -19,21 +20,21 @@ def not_found(e):
 @app.route('/home/')
 def about():
     if request.method == 'GET':
-        with open('db/about.json') as f:
+        with open(constants.ABOUT_PATH) as f:
             about_data = json.load(f)
         return render_template('about.html', context=about_data)
 
 @app.route('/services/')
 def services():
     if request.method == 'GET':
-        with open('db/services.json') as f:
+        with open(constants.SERVICES_PATH) as f:
             service_data = json.load(f)
         return render_template('services.html', context=service_data)
 
 @app.route('/experience/')
 def experience():
     if request.method == 'GET':
-        with open('db/experience.json') as f:
+        with open(constants.EXPERIENCE_PATH) as f:
             experience_data = json.load(f)
         return render_template('experience.html', context=experience_data)
 
@@ -45,7 +46,7 @@ def blog():
 @app.route('/projects/')
 def projects():
     if request.method == 'GET':
-        with open('db/projects.json') as f:
+        with open(constants.PROJECT_PATH) as f:
             projects_data = json.load(f)
         return render_template('projects.html', context=projects_data)
 
@@ -57,7 +58,7 @@ def contact():
         'alert_type' : ''
     }
 
-    with open('db/contact.json') as f:
+    with open(constants.CONTACT_PATH) as f:
         contact_data = json.load(f)
     
     if request.method == 'GET':
@@ -95,7 +96,7 @@ def contact():
 
         contact_data[timestamp_now] = form_data
 
-        with open('db/contact.json', 'w') as f:
+        with open(constants.CONTACT_PATH, 'w') as f:
             f.write(json.dumps(contact_data))
         context['feedback_message'] = "Your message has been sent successfully!"
         context['alert_type'] = 'success'
