@@ -15,3 +15,25 @@ def validate_string(string:str) -> str:
     if not result:
         raise ValueError(f'Invalid string passed {string}')
     return string
+
+def generate_recaptcha_code():
+        """
+        Returns the new ReCaptcha code
+        :return:
+        """
+        return """
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS"></script>
+        <script>
+        formBtn = document.getElementById("form-btn")
+        formBtn.addEventListener("click", function(e){ 
+            e.preventDefault();
+            grecaptcha.ready(function() {
+                grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
+                    document.getElementById("recaptcha").value = token
+                    $("#contact-form").submit()
+                });
+            });
+        });
+        </script>
+        """
+        

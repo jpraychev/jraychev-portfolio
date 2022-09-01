@@ -88,15 +88,17 @@ $(window).on('resize', function() {
 });
 
 // Handles Google ReCaptcha logic
-$("#form-btn").on('click', function(e) {
-    e.preventDefault();
-    grecaptcha.ready(function() {
-        grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
-            $("#recaptcha").val(token)
-            $("#contact-form").submit()
-        });
-    });
-});
+// formBtn = document.getElementById('form-btn')
+// formBtn.addEventListener("click", function(e){ 
+//     e.preventDefault();
+//     grecaptcha.ready(function() {
+//         grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
+//             document.getElementById("recaptcha").value = token
+//             $("#contact-form").submit()
+//         });
+//     });
+// });
+
 
 // Handles active class and adds line below the item
 currentPath = $("#request-path").data("requestPath").split("/")[1]

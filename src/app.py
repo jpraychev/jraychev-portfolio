@@ -65,8 +65,7 @@ def contact():
 
     if request.method == 'POST':
 
-        # validaate Google captcha
-        
+        # Validaate Google captcha
         data = {
             'secret': os.getenv('RECAPTCHA_SECRET_KEY'),
             'response' : request.form['g-recaptcha-response']
@@ -106,6 +105,13 @@ def dynamic_date():
     now = datetime.now()
     formatted_today = f'{now.year}/{now.month}/{now.day}'
     return dict(today = formatted_today)
+
+@app.context_processor
+def gorecaptcha():
+    from utils import generate_recaptcha_code
+    from markupsafe import Markup
+    code = Markup(generate_recaptcha_code())
+    return dict(recaptcha_code = code)
 
 if __name__ == "__main__":
     app.run(
