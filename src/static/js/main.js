@@ -87,14 +87,17 @@ $(window).on('resize', function() {
     checkWidth(width) ? addActive() : removeActive();
 });
 
-// Handles Google ReCaptcha logic
-// formBtn = document.getElementById('form-btn')
-// formBtn.addEventListener("click", function(e){ 
+// // Handles Google ReCaptcha logic
+// btn = document.getElementsByTagName("button")[0]
+// form = btn.closest("form")
+// console.log(btn)
+// // formBtn = document.getElementById('form-btn')
+// btn.addEventListener("click", function(e){ 
 //     e.preventDefault();
 //     grecaptcha.ready(function() {
 //         grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
 //             document.getElementById("recaptcha").value = token
-//             $("#contact-form").submit()
+//             form.submit()
 //         });
 //     });
 // });

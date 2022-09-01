@@ -22,15 +22,20 @@ def generate_recaptcha_code():
         :return:
         """
         return """
+        <input name="g-recaptcha-response" id="recaptcha" hidden></input>
         <script src="https://www.google.com/recaptcha/api.js?render=6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS"></script>
         <script>
-        formBtn = document.getElementById("form-btn")
-        formBtn.addEventListener("click", function(e){ 
+        // Handles Google ReCaptcha logic
+        btn = document.getElementsByTagName("button")[0]
+        form = btn.closest("form")
+        console.log(btn)
+        // formBtn = document.getElementById('form-btn')
+        btn.addEventListener("click", function(e){ 
             e.preventDefault();
             grecaptcha.ready(function() {
                 grecaptcha.execute("6LcevbYhAAAAADgeMdbvfQtFpOBgklwcIS-fCUpS", {action: "submit"}).then(function(token) {
                     document.getElementById("recaptcha").value = token
-                    $("#contact-form").submit()
+                    form.submit()
                 });
             });
         });
