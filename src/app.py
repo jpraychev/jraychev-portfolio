@@ -7,10 +7,12 @@ from flask import Flask, render_template, request
 from utils import validate_string
 import os
 import constants
+from recaptcha import ReCaptcha
 
 
 app = Flask(__name__)
-
+recaptcha = ReCaptcha(app)
+        
 @app.errorhandler(404) 
 def not_found(e):
     return render_template("404.html")
@@ -65,19 +67,11 @@ def contact():
 
     if request.method == 'POST':
 
-        # Validaate Google captcha
-        data = {
-            'secret': os.getenv('RECAPTCHA_SECRET_KEY'),
-            'response' : request.form['g-recaptcha-response']
-        }
-
-        r = requests.post(os.getenv('RECAPTCHA_VERIFY_URL'), data=data)
-
-        if not r.json()['success']:
+        if not recaptcha.verify():
             context['feedback_message'] = "Suspicious of robot activities"
             context['alert_type'] = 'danger'
             return render_template('contact.html', context=context)
-        
+
         timestamp_now = int(datetime.now().timestamp())
         
         try:
@@ -106,12 +100,6 @@ def dynamic_date():
     formatted_today = f'{now.year}/{now.month}/{now.day}'
     return dict(today = formatted_today)
 
-@app.context_processor
-def gorecaptcha():
-    from utils import generate_recaptcha_code
-    from markupsafe import Markup
-    code = Markup(generate_recaptcha_code())
-    return dict(recaptcha_code = code)
 
 if __name__ == "__main__":
     app.run(
