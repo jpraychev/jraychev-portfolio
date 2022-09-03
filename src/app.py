@@ -7,7 +7,7 @@ from flask import Flask, render_template, request
 from utils import validate_string
 import os
 import constants
-from recaptcha import ReCaptcha
+from recaptcha.recaptcha import ReCaptcha
 
 
 app = Flask(__name__)
