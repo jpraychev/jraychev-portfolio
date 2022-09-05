@@ -56,15 +56,17 @@ def contact():
         'alert_type' : ''
     }
 
-    with open(constants.CONTACT_PATH) as f:
-        contact_data = json.load(f)
-        num_of_objects = len(contact_data)
-        if num_of_objects == 0:
-            idx = 1
-        else:
-            idx = num_of_objects + 1
-        print(idx)
-    
+    try:
+        with open(constants.CONTACT_PATH) as f:
+            contact_data = json.load(f)
+            num_of_objects = len(contact_data)
+            idx = 1 if num_of_objects == 0 else num_of_objects + 1
+    except (FileNotFoundError, json.JSONDecodeError):
+        # FileNotFoundError - create the file if not there
+        # json.JSONDecodeError - add {} to file if exists but empty
+        with open(constants.CONTACT_PATH, 'w') as f:
+            f.write(json.dumps({}))
+
     if request.method == 'GET':
         return render_template('contact.html', context=context)
 
