@@ -58,6 +58,12 @@ def contact():
 
     with open(constants.CONTACT_PATH) as f:
         contact_data = json.load(f)
+        num_of_objects = len(contact_data)
+        if num_of_objects == 0:
+            idx = 1
+        else:
+            idx = num_of_objects + 1
+        print(idx)
     
     if request.method == 'GET':
         return render_template('contact.html', context=context)
@@ -83,7 +89,8 @@ def contact():
             context['alert_type'] = 'danger'
             return render_template('contact.html', context=context)
 
-        contact_data[timestamp_now] = form_data
+        contact_data[idx] = form_data
+        contact_data[idx]['time_of_posting'] = timestamp_now
 
         with open(constants.CONTACT_PATH, 'w') as f:
             f.write(json.dumps(contact_data))
