@@ -1,13 +1,10 @@
 import json
 from datetime import datetime
-from dotenv import load_dotenv
-import requests
 from email_validator import validate_email
 from flask import Flask, render_template, request
 from utils import validate_string
-import os
 import constants
-from recaptcha.recaptcha import ReCaptcha
+from google_recaptcha import ReCaptcha
 
 
 app = Flask(__name__)
