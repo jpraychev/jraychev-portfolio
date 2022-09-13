@@ -3,7 +3,7 @@ from datetime import datetime
 from email_validator import validate_email
 from flask import Flask, render_template, request
 from utils import validate_string
-from utils import get_branch_last_commit_hash, get_upstream_branch
+from utils import get_last_commit_and_upstream_url
 import constants
 from google_recaptcha import ReCaptcha
 
@@ -105,13 +105,11 @@ def contact():
 def context_variables():
     now = datetime.now()
     formatted_today = f'{now.year}/{now.month}/{now.day}'
-    last_commit_hash = get_branch_last_commit_hash('main')
-    upstream = get_upstream_branch()
-    upstream_url = f'{upstream}/commit/{last_commit_hash}'
-
+    commit, upstream_url = get_last_commit_and_upstream_url('origin', 'main')
+    
     return {
         'today' : formatted_today,
-        'last_commit_hash' : last_commit_hash,
+        'last_upstream_commit' : commit,
         'upstream_url' : upstream_url
     }
 

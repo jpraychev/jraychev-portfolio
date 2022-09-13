@@ -1,24 +1,17 @@
 import re
 import subprocess as ps
 
-def get_upstream_branch() -> str:
+def get_last_commit_and_upstream_url(origin:str, main_branch:str) -> str:
     
-    cmd = 'git config --get remote.origin.url'
-    try:
-        upstream_url = ps.run(cmd, check=True, shell=True, capture_output=True, text=True)
-        return upstream_url.stdout.strip().split('.git')[0]
-    except ps.CalledProcessError:
-        print('No upstream branch found')
-        return False
+    get_commit_cmd = f'git rev-parse --short {origin}/{main_branch}'
+    get_upstream_cmd = f'git config --get remote.{origin}.url'
 
-def get_branch_last_commit_hash(main_branch:str) -> str:
-    
-    cmd = f'git rev-parse --short origin/{main_branch}'
     try:
-        result = ps.run(cmd, check=True, shell=True, capture_output=True, text=True)
-        return result.stdout.strip()
+        commit = ps.run(get_commit_cmd, check=True, shell=True, capture_output=True, text=True).stdout.strip()
+        upstream_url = ps.run(get_upstream_cmd, check=True, shell=True, capture_output=True, text=True).stdout.strip().split('.git')[0]
+        return (commit, upstream_url)
     except ps.CalledProcessError:
-        print(f'Branch {main_branch} not found!')
+        print(f'Either git is not initialized or there is no upstream repository available.')
         return False
 
 def validate_string(string:str) -> str:
