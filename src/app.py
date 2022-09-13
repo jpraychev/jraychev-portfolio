@@ -3,6 +3,7 @@ from datetime import datetime
 from email_validator import validate_email
 from flask import Flask, render_template, request
 from utils import validate_string
+from utils import get_branch_last_commit_hash
 import constants
 from google_recaptcha import ReCaptcha
 
@@ -104,8 +105,12 @@ def contact():
 def dynamic_date():
     now = datetime.now()
     formatted_today = f'{now.year}/{now.month}/{now.day}'
-    return dict(today = formatted_today)
+    last_commit_hash = get_branch_last_commit_hash('main')
 
+    return {
+        'today' : formatted_today,
+        'last_commit_hash' : last_commit_hash
+    }
 
 if __name__ == "__main__":
     app.run(
