@@ -1,0 +1,19 @@
+[Unit]
+Description=Portfolio Flask service
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=jraychev
+Group=jraychev
+PIDFile=/var/tmp/portfolio.pid
+
+ExecStart=/opt/jraychev-portfolio/venv/bin/gunicorn -c /opt/jraychev-portfolio/deployment/gunicorn-conf.py app:app
+
+Restart=on-failure
+RestartSec=30
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
