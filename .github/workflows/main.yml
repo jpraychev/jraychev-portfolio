@@ -8,8 +8,6 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
-      uses: actions/checkout@v1
 
     - name: executing remote ssh commands using password
       uses: ./
@@ -19,12 +17,3 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: ls
-
-    - name: executing remote ssh commands using ssh key
-      uses: ./
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.KEY }}
-        port: ${{ secrets.PORT }}
-        script: whoami
