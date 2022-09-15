@@ -7,8 +7,11 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    
     steps:
-
+    - name: checkout
+      uses: actions/checkout@v1
+    
     - name: executing remote ssh commands using password
       uses: ./
       with:
