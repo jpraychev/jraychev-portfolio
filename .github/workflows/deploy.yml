@@ -1,4 +1,4 @@
-name: Run remote ssh commands
+name: Prod deployment
 
 on: [push]
 
@@ -9,7 +9,6 @@ env:
   PULL_CMD: 'cd /opt/jraychev-portfolio/src && git pull'
 
 jobs:
-
   build:
     name: Deploy to prod server (run ssh commands)
     runs-on: ubuntu-latest
