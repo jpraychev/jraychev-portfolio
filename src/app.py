@@ -105,7 +105,7 @@ def contact():
 def context_variables():
     now = datetime.now()
     formatted_today = f'{now.year}/{now.month}/{now.day}'
-    commit, upstream_url = get_last_commit_and_upstream_url('origin', 'main')
+    commit, upstream_url = get_last_commit_and_upstream_url('origin', 'dev')
     
     return {
         'today' : formatted_today,
