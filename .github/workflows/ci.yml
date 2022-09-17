@@ -1,0 +1,15 @@
+name: Run remote ssh commands
+
+on: [push]
+
+env:
+  DAY_OF_WEEK: Monday
+
+jobs:
+
+  build:
+    name: Deploy to prod server (run ssh commands)
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Deploy to prod"
+        run: sshpass
