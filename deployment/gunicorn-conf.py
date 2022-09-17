@@ -6,7 +6,7 @@ base_dir = str(Path(__file__).parent.parent.resolve().joinpath('src'))
 worker_nodes = multiprocessing.cpu_count() * 2 + 1
 
 chdir = base_dir
-bind = "127.0.0.1:5050"
+bind = "0.0.0.0:5050"
 workers = worker_nodes
 accesslog = 'logs/access.log'
 errorlog =  'logs/debug.log'
