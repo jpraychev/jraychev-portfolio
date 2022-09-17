@@ -2,9 +2,6 @@ name: Run remote ssh commands
 
 on: [push]
 
-env:
-  DAY_OF_WEEK: Monday
-
 jobs:
 
   build:
@@ -12,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to prod"
-        run: sshpass
+        run: sshpass -p env.PASSWORD ssh env.USER_DOMAIN 'cd /opt/jraychev-portfolio/src && git graph' 
