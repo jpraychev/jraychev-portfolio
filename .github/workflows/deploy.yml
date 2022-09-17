@@ -1,6 +1,9 @@
 name: Prod deploy
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 env:
   USERNAME: ${{ secrets.USERNAME }}
