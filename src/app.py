@@ -5,11 +5,11 @@ from flask import Flask, render_template, request
 from utils import validate_string
 from utils import get_last_commit_and_upstream_url
 import constants
-from google_recaptcha import ReCaptcha
+# from google_recaptcha import ReCaptcha
 
 
 app = Flask(__name__)
-recaptcha = ReCaptcha(app)
+# recaptcha = ReCaptcha(app)
         
 @app.errorhandler(404) 
 def not_found(e):
@@ -73,10 +73,10 @@ def contact():
 
     if request.method == 'POST':
 
-        if not recaptcha.verify():
-            context['feedback_message'] = "Suspicious of robot activities"
-            context['alert_type'] = 'danger'
-            return render_template('contact.html', context=context)
+        # if not recaptcha.verify():
+        #     context['feedback_message'] = "Suspicious of robot activities"
+        #     context['alert_type'] = 'danger'
+        #     return render_template('contact.html', context=context)
 
         timestamp_now = int(datetime.now().timestamp())
         
