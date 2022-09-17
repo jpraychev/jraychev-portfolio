@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to prod"
-        run: sshpass -p env.PASSWORD ssh env.USERNAME@env.HOST 'cd /opt/jraychev-portfolio/src && git graph' 
+        run: sshpass -p $PASSWORD ssh $USERNAME@$HOST 'cd /opt/jraychev-portfolio/src && git graph' 
