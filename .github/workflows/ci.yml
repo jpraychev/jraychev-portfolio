@@ -15,4 +15,4 @@ jobs:
     steps:
       # - uses: actions/checkout@v2
       - name: "Deploy to prod"
-        run: sshpass -p $PASSWORD ssh $USERNAME@$HOST 'ls' 
+        run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'ls' 
