@@ -6,7 +6,7 @@ env:
   USERNAME: ${{ secrets.USERNAME }}
   PASSWORD: ${{ secrets.PASSWORD }}
   HOST: ${{ secrets.HOST }}
-  BASE_DIR: '/opt/jraychev-portfolio/src'
+  PULL_CMD: 'cd /opt/jraychev-portfolio/src && git pull'
 
 jobs:
 
@@ -15,5 +15,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to prod"
-        # run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'cd  && git pull' 
-        run: echo $BASE_DIR
+        run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST $PULL_CMD
