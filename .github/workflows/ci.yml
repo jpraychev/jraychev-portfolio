@@ -13,6 +13,5 @@ jobs:
     name: Deploy to prod server (run ssh commands)
     runs-on: ubuntu-latest
     steps:
-      # - uses: actions/checkout@v2
       - name: "Deploy to prod"
-        run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'ls' 
+        run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'cd /opt/jraychev-portfolio/src && git status' 
