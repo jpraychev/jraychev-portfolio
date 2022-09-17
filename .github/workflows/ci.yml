@@ -2,6 +2,11 @@ name: Run remote ssh commands
 
 on: [push]
 
+env:
+  USERNAME: ${{ secrets.USERNAME }}
+  PASSWORD: ${{ secrets.PASSWORD }}
+  HOST: ${{ secrets.HOST }}
+
 jobs:
 
   build:
