@@ -15,4 +15,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Deploy to prod"
-        run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'cd $BASE_DIR && git pull' 
+        # run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST 'cd  && git pull' 
+        run: echo $BASE_DIR
