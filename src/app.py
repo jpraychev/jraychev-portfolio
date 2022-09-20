@@ -6,11 +6,12 @@ from utils import validate_string
 from utils import get_last_commit_and_upstream_url
 import constants
 from google_recaptcha import ReCaptcha
-
+from telegram import Bot
 
 app = Flask(__name__)
 recaptcha = ReCaptcha(app)
-        
+bot = Bot()
+
 @app.errorhandler(404) 
 def not_found(e):
     return render_template("404.html")
@@ -99,6 +100,9 @@ def contact():
             f.write(json.dumps(contact_data))
         context['feedback_message'] = "Your message has been sent successfully!"
         context['alert_type'] = 'success'
+
+        msg = f'Received message on {request.host_url} from {validate_string(request.form["name"])}'
+        bot.send_msg(to='-628470117', msg=msg)
         return render_template('contact.html', context=context)
 
 @app.context_processor
@@ -114,6 +118,7 @@ def context_variables():
     }
 
 if __name__ == "__main__":
+    
     app.run(
         host='127.0.0.1',
         port=5050,
