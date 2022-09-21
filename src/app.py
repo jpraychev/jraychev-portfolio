@@ -101,7 +101,7 @@ def contact():
         context['feedback_message'] = "Your message has been sent successfully!"
         context['alert_type'] = 'success'
 
-        msg = f'Received message on {request.host_url} from {validate_string(request.form["name"])}'
+        msg = f'Received message on {request.root_url} from {validate_email(request.form["email"]).email}'
         bot.send_msg(to='-628470117', msg=msg)
         return render_template('contact.html', context=context)
 
