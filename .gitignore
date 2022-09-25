@@ -2,3 +2,6 @@ venv/
 src/__pycache__/
 src/db/contact.json
 deployment/__pycache__
+tests/__pycache__
+tests/.pytest_cache
+tests/geckodriver.log
