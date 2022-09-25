@@ -4,25 +4,25 @@
             "employer_name" : "SAP",
             "employment_duration" : "2021 - now",
             "job_title" : "DevOps Engineer",
-            "job_description" : "As a DevOps engineer I am mainly focus on building and maintaining automation tools for our Cloud Operation. Other main responsibilities include critical incident and problem management."
+            "job_description" : "As a DevOps engineer I am mainly focus on building and maintaining internal tools for our Cloud Operation team. Other main responsibilities include critical incident and problem management."
         },
         "2" : {
             "employer_name" : "Freelance software developer",
             "employment_duration" : "2019 - now",
             "job_title" : "Full Stack Developer",
-            "job_description" : "As a freelancer my time is mainly occupied with client side projects. Some of those projects include web development using frameworks such as Django, Flask, Woordpress and Shopify."
+            "job_description" : "As a freelancer, my time is mainly occupied with client side projects. Some of those projects include web development using frameworks such as Django, Flask, Woordpress and Shopify. Besides the web development project, I've been working on various automation tools supporting those projects."
         },
         "3" : {
             "employer_name" : "Dianel Ltd.",
             "employment_duration" : "2020 - 2021",
             "job_title" : "Network and System admin",
-            "job_description" : "As a network and system administrator I was responsible for maintaining the network and system infrastructure of the company. My main tasks include but are not limited to installing, configuring and maintaining various services that support company needs (iSCSI, SMB, Ansible, DNS, Logging, Monitoring, Networking, etc). Besides the system administration, I was responsible for the network infrastructure by configuring and maintaining all network equipment that includes Cisco, Nexus and MikroTik devices. Additionally I had built several internal tools that supports engineers day to day tasks using Python, Javascript, Bash, etc."
+            "job_description" : "As a network and system administrator I was responsible for maintaining the network and system infrastructure of the company. My main tasks included installing, configuring and maintaining various services that support company needs (iSCSI, SMB, Ansible, DNS, Logging, Monitoring, Networking, etc). Besides the system administration, I was responsible for the network infrastructure by configuring and maintaining all network equipment that includes Cisco, Nexus and MikroTik devices. Additionally I had built several internal tools that supports engineers day to day tasks using Python, Javascript, Bash, etc."
         },
         "4" : {
             "employer_name" : "University of Ruse 'Angel Kanchev'",
             "employment_duration" : "2016 - 2020",
             "job_title" : "PhD Student and Project Research",
-            "job_description" : "As a researcher I have been working on several European projects including 3D technologies such as modelling, printing, visualization, etc.. In addition to that I have been working on a prototype vehicle powered by a hydrogen fuel cell and competing in the Shell Eco Marathon events. My PhD revolves around distributed SDN networks and traffic load handling."
+            "job_description" : "As a researcher I have worked on several projects funded by the European Union, including 3D technologies such as modelling, printing, visualization, etc.. In addition to that I have workied on a prototype vehicle powered by a hydrogen fuel cell and competing in the Shell Eco Marathon events between 2016-2019. My PhD studies revolve around distributed SDN networks and traffic load handling."
         },
         "5" : {
             "employer_name" : "Datasyst Ltd.",
