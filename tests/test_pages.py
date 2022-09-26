@@ -1,3 +1,4 @@
+import sys
 import time
 import requests
 from pathlib import Path
@@ -10,7 +11,13 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 file_path = Path(__file__).resolve().parent
-drivers_path = file_path.joinpath('drivers/geckodriver-win64.exe')
+
+if sys.platform == 'win32':
+    driver_name = 'geckodriver-win64.exe'
+if sys.platform == 'linux':
+    driver_name = 'geckodriver'
+
+drivers_path = file_path.joinpath(f'drivers/{driver_name}')
 
 url = 'http://127.0.0.1:5050/'
 
@@ -41,12 +48,12 @@ def test_contact():
 def test_contact_failure_post():
     data = {}
     data['name'] = 'admin'
-    data['email'] = 'admin@example.com'
+    data['email'] = 'admin@admin.com'
     data['subject'] = 'pytest'
     data['message'] = 'pytest'
 
     r = requests.post(url + 'contact', params=data)
-    assert r.status_code == 500
+    assert r.status_code in (400, 500)
 
 def test_contact_success_post():
     service = Service(executable_path=drivers_path, log_path=None)
@@ -66,9 +73,10 @@ def test_contact_success_post():
     email_field.send_keys('admin@admin.com')
     subject_field.send_keys('pytest')
     message_field.send_keys('pytest')
-
     submit_button.click()
     
+    # TO DO
+    # Always close the driver - if we get an exception from the assert the driver process will hand
     time.sleep(1)
     success_fail_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div[2]/div/div/div')))
     assert 'Your message has been sent successfully!' in success_fail_field.text
