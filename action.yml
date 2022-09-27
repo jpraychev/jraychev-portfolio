@@ -1,0 +1,6 @@
+# action.yml
+name: 'Run tests'
+description: 'Run tests on a push or pull request'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
