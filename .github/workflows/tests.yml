@@ -7,4 +7,4 @@ jobs:
     steps:
       - name: Rung tests
         id: tests
-        uses: jpraychev/jraychev-portfolio@master
+        uses: jpraychev/jraychev-portfolio@main
