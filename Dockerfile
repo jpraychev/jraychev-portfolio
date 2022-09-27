@@ -4,10 +4,6 @@ FROM ubuntu:latest
 RUN apt update
 RUN apt install python3 -y
 RUN apt install python3-pip -y
-RUN apt install python3-venv -y
-RUN apt install vim -y
-RUN apt install curl -y
-RUN apt install wget -y
 RUN apt install software-properties-common -y
 RUN add-apt-repository ppa:mozillateam/ppa
 RUN printf "Package: *\nPin: release o=LP-PPA-mozillateam\nPin-Priority: 1001" >> /etc/apt/preferences.d/mozilla-firefox
@@ -25,9 +21,5 @@ COPY run_tests.sh .
 
 # Install all requrements for our app
 RUN pip3 install -r requirements-tests.txt
-
-RUN useradd -ms /bin/bash jraychev
-RUN chown -R jraychev:jraychev /opt/portfolio
-USER jraychev
 
 CMD ["/bin/bash", "/opt/portfolio/run_tests.sh"]
