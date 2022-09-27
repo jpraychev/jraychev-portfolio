@@ -55,30 +55,30 @@ def test_contact_failure_post():
     r = requests.post(url + 'contact', params=data)
     assert r.status_code in (400, 500)
 
-def test_contact_success_post():
-    service = Service(executable_path=drivers_path, log_path=None)
-    options = Options()
-    options.headless = True # or options.add_argument('-headless')
+# def test_contact_success_post():
+#     service = Service(executable_path=drivers_path, log_path=None)
+#     options = Options()
+#     options.headless = True # or options.add_argument('-headless')
         
-    driver = Firefox(service=service, options=options)
-    driver.get(url + 'contact')
+#     driver = Firefox(service=service, options=options)
+#     driver.get(url + 'contact')
 
-    name_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_name')))
-    email_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_email')))
-    subject_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_subject')))
-    message_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_message')))
-    submit_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'form-btn')))
+#     name_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_name')))
+#     email_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_email')))
+#     subject_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_subject')))
+#     message_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'id_message')))
+#     submit_button = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.ID, 'form-btn')))
     
-    name_field.send_keys('admin')
-    email_field.send_keys('admin@admin.com')
-    subject_field.send_keys('pytest')
-    message_field.send_keys('pytest')
-    submit_button.click()
+#     name_field.send_keys('admin')
+#     email_field.send_keys('admin@admin.com')
+#     subject_field.send_keys('pytest')
+#     message_field.send_keys('pytest')
+#     submit_button.click()
     
-    # TO DO
-    # Always close the driver - if we get an exception from the assert the driver process will hand
-    time.sleep(1)
-    success_fail_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div[2]/div/div/div')))
-    assert 'Your message has been sent successfully!' in success_fail_field.text
+#     # TO DO
+#     # Always close the driver - if we get an exception from the assert the driver process will hand
+#     time.sleep(1)
+#     success_fail_field = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '/html/body/div[1]/div[2]/div[2]/div/div/div')))
+#     assert 'Your message has been sent successfully!' in success_fail_field.text
 
-    driver.close()
+#     driver.close()
