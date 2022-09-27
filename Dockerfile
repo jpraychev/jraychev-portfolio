@@ -26,4 +26,8 @@ COPY run_tests.sh .
 # Install all requrements for our app
 RUN pip3 install -r requirements-tests.txt
 
+RUN useradd -ms /bin/bash jraychev
+RUN chown -R jraychev:jraychev /opt/portfolio
+USER jraychev
+
 CMD ["/bin/bash", "/opt/portfolio/run_tests.sh"]
