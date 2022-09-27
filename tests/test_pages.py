@@ -23,27 +23,27 @@ url = 'http://127.0.0.1:5050/'
 
 def test_homepage():
     r = requests.get(url + 'home')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_services():
     r = requests.get(url + 'services')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_experience():
     r = requests.get(url + 'experience')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_projects():
     r = requests.get(url + 'projects')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_blog():
     r = requests.get(url + 'blog')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_contact():
     r = requests.get(url + 'contact')
-    assert r.status_code == 200
+    assert r.status_code == 201
 
 def test_contact_failure_post():
     data = {}
