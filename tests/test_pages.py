@@ -23,6 +23,7 @@ url = 'http://127.0.0.1:5050/'
 
 def test_homepage():
     r = requests.get(url + 'home')
+    print(r.text)
     assert r.status_code == 200
 
 def test_services():
