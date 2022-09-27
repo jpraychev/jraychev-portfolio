@@ -26,4 +26,4 @@ COPY run_tests.sh .
 # Install all requrements for our app
 RUN pip3 install -r requirements-tests.txt
 
-CMD ["ls"]
+CMD ["/bin/bash", "/opt/portfolio/run_tests.sh"]
