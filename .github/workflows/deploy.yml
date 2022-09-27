@@ -1,9 +1,10 @@
-name: Prod deploy
+name: Deploy
 
 on:
-  push:
-    branches:
-      - main
+  workflow_run:
+    workflows: [Tests]
+    types:
+      - completed
 
 env:
   USERNAME: ${{ secrets.USERNAME }}
@@ -15,6 +16,7 @@ jobs:
   build:
     name: Deploy to prod server (run ssh commands)
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - name: "Deploy to prod"
         run: sshpass -p $PASSWORD ssh -o StrictHostKeyChecking=no $USERNAME@$HOST $PULL_CMD
